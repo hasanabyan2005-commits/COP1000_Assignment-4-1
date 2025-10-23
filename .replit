@@ -1,18 +1,51 @@
-entrypoint = "main.py"
-modules = ["python-3.10:v18-20230807-322e88b"]
+numChars = 8
+woodType = oak
+color = gold
 
-[nix]
-channel = "stable-23_05"
+charge = 35.00
 
-[env]
-VIRTUAL_ENV = "$REPL_HOME/.pythonlibs"
+if numChars > 5
+charge += (8-5) * 4.00
 
-[unitTest]
-language = "python3"
+if woodType.lower() == oak
+    charge += 20.00
 
-[gitHubImport]
-requiredFiles = [".replit", "replit.nix"]
+if color.lower() == gold
+    charge += 15.00
 
-[deployment]
-run = ["python3", "main.py"]
-deploymentTarget = "cloudrun"
+print( $58.00 + format(charge .2f))
+
+numChars = 20
+woodType = pine
+color = gold
+
+charge = 35.00
+
+if numChars > 5
+charge += (20-5) * 4.00
+
+if woodType.lower() == pine
+    charge += 20.00
+
+if color.lower() == gold
+    charge += 15.00
+
+print( $70.00 + format(charge .2f))
+
+numChars = 18
+woodType = oak
+color = black
+
+charge = 35.00
+
+if numChars > 5
+charge += (18-5) * 4.00
+
+if woodType.lower() == oak
+    charge += 20.00
+
+if color.lower() == gold
+    charge += 15.00
+
+print( $68.00 + format(charge .2f))
+
